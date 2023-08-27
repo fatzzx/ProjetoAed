@@ -5,8 +5,9 @@ void q1(tp_pilha *pilhaX, tp_item e){
     push(pilhaX, e);
     return;
   }
-  tp_item aux;
+
   tp_pilha pilhaY, pilhaZ;
+  tp_item aux;
   inicializa_pilha(&pilhaY);
   inicializa_pilha(&pilhaZ);
   while(e > pilhaX->item[pilhaX->topo] && !pilha_vazia(pilhaX)){
@@ -25,20 +26,13 @@ int main(){
   tp_pilha pilhaX;
   inicializa_pilha(&pilhaX);
   q1(&pilhaX, 9);
+  q1(&pilhaX, 6);
   q1(&pilhaX, 4);
   q1(&pilhaX, 9);
-  q1(&pilhaX, 4);
-  q1(&pilhaX, 4);
   q1(&pilhaX, 6);
-  q1(&pilhaX, 6);
-  q1(&pilhaX, 9);
-  q1(&pilhaX, 9);
-  q1(&pilhaX, 6);
-  q1(&pilhaX, 9);
-  q1(&pilhaX, 6);
+  q1(&pilhaX, 5);
   q1(&pilhaX, 9);
   q1(&pilhaX, 4);
   imprime_pilha(pilhaX);
-
   return 0;
 }
