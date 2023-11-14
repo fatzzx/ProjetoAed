@@ -77,5 +77,44 @@ int somaNosDeArvoreBinariaDeBuscaRec(arvoreBinariaDeBusca *raiz){
   if(raiz != NULL) return raiz->info + somaNosDeArvoreBinariaDeBuscaRec(raiz->esq) + somaNosDeArvoreBinariaDeBuscaRec(raiz->dir);
 }
 
+int numeroNosDeArvoreBinariaDeBuscaIter(arvoreBinariaDeBusca *raiz) {
+  if (raiz == NULL) return 0;
+  int contador = 0;
+  arvoreBinariaDeBusca *pilha[100]; 
+  int topo = -1;
+  pilha[++topo] = raiz;
+  while (topo >= 0) {
+    arvoreBinariaDeBusca *noAtual = pilha[topo--];
+    contador++;
+    if (noAtual->dir != NULL) {
+      pilha[++topo] = noAtual->dir;
+    }
+    if (noAtual->esq != NULL) {
+      pilha[++topo] = noAtual->esq;
+    }
+  }
+  return contador;
+}
+
+int somaNosDeArvoreBinariaDeBuscaIter(arvoreBinariaDeBusca *raiz) {
+  if (raiz == NULL) return 0;
+  int soma = 0;
+  arvoreBinariaDeBusca *pilha[100]; 
+  int topo = -1;
+  pilha[++topo] = raiz;
+  while (topo >= 0) {
+    arvoreBinariaDeBusca *noAtual = pilha[topo--];
+    soma += noAtual->info;
+
+    if (noAtual->dir != NULL) {
+      pilha[++topo] = noAtual->dir;
+    }
+    if (noAtual->esq != NULL) {
+      pilha[++topo] = noAtual->esq;
+    }
+  }
+  return soma;
+}
+
 
 #endif
