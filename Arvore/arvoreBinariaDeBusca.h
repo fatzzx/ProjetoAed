@@ -78,17 +78,4 @@ int somaNosDeArvoreBinariaDeBuscaRec(arvoreBinariaDeBusca *raiz){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
